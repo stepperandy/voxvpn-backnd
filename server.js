@@ -49,7 +49,7 @@ app.get("/download-config/:id", (req, res) => {
   }
 
   const filePath = path.join(CONFIG_DIR, server.ovpnFile);
-
+  console.log("Looking for file at:", filePath);
   if (!fs.existsSync(filePath)) {
     return res.status(404).json({
       success: false,
